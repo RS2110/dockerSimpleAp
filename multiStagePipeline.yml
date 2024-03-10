@@ -42,3 +42,9 @@ stages:
   - job: DeplytoAKS
     displayName: Deploy to AKS
     steps:
+    - task: KubernetesManifest@1
+      inputs:
+        action: 'deploy'
+        connectionType: 'kubernetesServiceConnection'
+        kubernetesServiceConnection: 'aks01rsSvcConnection'
+        manifests: '**/AKS/deployment.yaml'
