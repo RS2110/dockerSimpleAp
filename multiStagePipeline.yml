@@ -37,7 +37,7 @@ stages:
 - stage: DeploytoAKS
     
   pool:
-    vmImage: ubutnu-latest
+    vmImage: ubuntu-latest
   jobs:
   - job: DeplytoAKS
     displayName: Deploy to AKS
