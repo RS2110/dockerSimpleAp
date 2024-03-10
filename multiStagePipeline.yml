@@ -1,5 +1,6 @@
 stages:
 
+
 - stage: BuildServices
 
   pool:
@@ -32,3 +33,12 @@ stages:
             tags: |
                 $(Build.BuildId)
                 latest
+
+- stage: DeploytoAKS
+    
+  pool:
+    vmImage: ubutnu-latest
+  jobs:
+  - job: DeplytoAKS
+    displayName: Deploy to AKS
+    steps:
